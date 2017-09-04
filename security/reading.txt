@@ -1,0 +1,8 @@
+# PaX RAP RIP ROP
+https://pax.grsecurity.net/docs/PaXTeam-H2HC15-RAP-RIP-ROP.pdf
+
+# PaX usercopy memory_sanitize randmmap slide
+https://www.slideshare.net/kerneltlv/grsecurity-and-pax
+
+# Guide to kernel exploition
+https://github.com/sohaibnasser/CySecBooks/blob/master/A%20Guide%20to%20Kernel%20Exploitation%20Attacking%20the%20Core.pdf
