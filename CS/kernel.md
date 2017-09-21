@@ -6,3 +6,7 @@
 
 # Professional Linux Architecture 
 * http://cse.yeditepe.edu.tr/~kserdaroglu/spring2014/cse331/termproject/BOOKS/ProfessionalLinuxKernelArchitecture-WolfgangMauerer.pdf
+
+# Ptrace tutorial
+http://www.linuxjournal.com/article/6100
+
