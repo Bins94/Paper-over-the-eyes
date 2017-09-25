@@ -34,10 +34,13 @@ https://labs.mwrinfosecurity.com/assets/BlogFiles/mwri-mmap-exploitation-whitepa
 2 虽然是 root，但是爆破影响了内核内存，没有了利用价值
 3 一些安全模块，SElinux Smack 等，需要一些后续的绕过技术
 作者简介了 SElinux 的绕过，替换规则文件，但是没有示例。
-
 * 第一段基础代码示例，用户空间未经检查的参数，被 mmap 调用传递给 remap_pfn_range，用户空间可以访问到打大片的内核内存。结合/proc/$PID/maps 和 /proc/iomem 可以看到效果。（论防 infoleak 的重要性...）在内存中匹配 credentials。确认拿到root后直接执行一个 shell。
-* 透过触发 fault 的方式进行漏洞利用
-* 第二个版本
+* 透过触发 fault 的方式进行内核内存泄漏。一个针对第二部分的第三种情况的示例，映射失败调用fault后直接将内存 dump 下来。
+* 第二个版本，经过两次映射来扩张映射空间。
+1 调用 mmap，相应的 size 符合驱动实现的长度来通过检查。
+2 调用 mremap 扩张映射的空间，做一遍重映射，也能把内存 dump 下来。
 
 5. Tips and Tricks
-* 建议
+* fuzz 测试可以帮助检查出一些问题
+* 罗列了一些同样有风险的函数
+* 作者总结了可能出现问题的代码，除去驱动，还有一些子系统需要实现自己的 mmap 的，包括proc, sysfs, debugfs, file system, sockets 等。另外还有一些系统调用实现处理需要用到 remap_pfn_range 的地方。
