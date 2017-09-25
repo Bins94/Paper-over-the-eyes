@@ -18,11 +18,8 @@ UFO:UDP Fragmentation offload, Fragmentation of large UDP datagram to MTU size
 # CVE-2017-14497
 Linux kernel: packet: buffer overflow in tpacket_rcv
 tpacket_rcv is the prot_hook.func of packet device( for raw socket), tpacket_rcv will be called after __netif_receive_skb_core in raw sock( like tcpdump?). /proc/net/packet is the interface of packet devive.
-call stack from tcpdump
-socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE) = 3
-bind(3, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
-getsockname(3, {sa_family=AF_NETLINK, nl_pid=1788, nl_groups=00000000}, [12]) = 0
-sendto(3, {{len=20, type=0x12 /* NLMSG_??? */, flags=NLM_F_REQUEST|0x300, seq=1505961587, pid=0}, "\0\0\0\0"}, 20, 0, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 20
-recvmsg(...)
+A userspace process touch tpacket_rcv
+https://github.com/Bins94/Kernel_Anatomy/blob/master/socket/tpk_rcv.c
 http://seclists.org/oss-sec/2017/q3/476
 fix:https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=edbd58be15a957f6a760c4a514cd475217eb97fd
+https://www.kernel.org/doc/Documentation/networking/packet_mmap.txt
