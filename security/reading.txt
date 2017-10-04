@@ -15,3 +15,9 @@ https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final143.p
 
 # Understanding linux network internals
 http://pdf.th7.cn/down/files/1312/understanding_linux_network_internals.pdf
+
+# PaX feature overview
+http://www.openwall.com/lists/kernel-hardening/2011/06/26/3
+
+# Better kernel with gcc-plugin
+https://lwn.net/Articles/461811/
