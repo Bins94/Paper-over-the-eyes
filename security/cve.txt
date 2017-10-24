@@ -23,3 +23,12 @@ https://github.com/Bins94/Kernel_Anatomy/blob/master/socket/tpk_rcv.c
 http://seclists.org/oss-sec/2017/q3/476
 fix:https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=edbd58be15a957f6a760c4a514cd475217eb97fd
 https://www.kernel.org/doc/Documentation/networking/packet_mmap.txt
+
+# CVE-2017-14991
+SCSI devices uninitilize memory copy to user by ioctl SG_GET_REQEST_TABLE, infoleak
+
+#CVE-2017-12192
+kernel: NULL pointer dereference due to KEYCTL_READ on negative key
+file:security/keys/keyctl.c
+code path:keyctl(KEYCTL_READ) -> keyctl_read_key(KEY_FLAG_NEGATIVE key->flags)
+NULL pointer dereference

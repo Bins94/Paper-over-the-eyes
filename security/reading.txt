@@ -21,3 +21,6 @@ http://www.openwall.com/lists/kernel-hardening/2011/06/26/3
 
 # Better kernel with gcc-plugin
 https://lwn.net/Articles/461811/
+
+# Linux ASLR comparison
+https://gist.github.com/thestinger/b43b460cfccfade51b5a2220a0550c35

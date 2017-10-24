@@ -15,6 +15,21 @@ https://access.redhat.com/articles/20484
 ret2usr -> ret2dir
 PaX KERNEXEC/UDEREF -> smap/smep/pxn -> page frame infoleak -> Exclusive page-frame
 
-#Usercopy whitelist
+# Usercopy whitelist
 [kernel-hardening] [PATCH v3 00/31] Hardened usercopy whitelisting
 slab_cache size, flag
+
+# PAX_MEMORY_STACKLEAK port
+[PATCH RFC v5 0/5] Introduce the STACKLEAK feature and a test for it
+erase kernel stack before retuan from system call
+kernel stack overflow check (track_stack/check_alloca)
+Not by PaX
+lkdtm test for STACKLEAK
+Show STACKLEAK metrics in the /proc file system
+configure option CONFIG_STACKLEAK_TRACK_MIN_SIZE for track_stack
+
+# Google Android Security 2016 Report Final.pdf
+no-executable pxn/pan block perf by default seccomp support
+
+# printk address infoleak 
+[kernel-hardening] [PATCH v7] printk: hash addresses printed with %p
