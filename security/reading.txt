@@ -24,3 +24,6 @@ https://lwn.net/Articles/461811/
 
 # Linux ASLR comparison
 https://gist.github.com/thestinger/b43b460cfccfade51b5a2220a0550c35
+
+# gcc-plugin for kernexec/stackleak
+https://lwn.net/Articles/712161/
