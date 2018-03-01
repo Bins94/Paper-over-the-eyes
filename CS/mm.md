@@ -10,3 +10,6 @@ https://www.utdallas.edu/~zxl111930/spring2012/public/lec11-handout.pdf
 
 # Page fault error code
 https://lkml.org/lkml/2015/2/28/243
+
+# VMA -> page -> pfn
+http://duartes.org/gustavo/blog/post/how-the-kernel-manages-your-memory/

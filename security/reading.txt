@@ -1,4 +1,4 @@
-# PaX RAP RIP ROP
+# PaX RAP RIP 
 https://pax.grsecurity.net/docs/PaXTeam-H2HC15-RAP-RIP-ROP.pdf
 
 # PaX usercopy memory_sanitize randmmap slide
@@ -27,3 +27,24 @@ https://gist.github.com/thestinger/b43b460cfccfade51b5a2220a0550c35
 
 # gcc-plugin for kernexec/stackleak
 https://lwn.net/Articles/712161/
+
+# seccomp history
+https://lwn.net/Articles/656307/
+
+# Some documentation
+https://firejail.wordpress.com/documentation-2/
+
+# eBPF memory corruption 
+https://bugs.chromium.org/p/project-zero/issues/detail?id=1454&desc=3
+
+# 2017 debian security
+https://lists.debian.org/debian-security-announce/2017/msg00336.html
+
+# TOMOYO(other security knowlegedge)
+https://www.slideshare.net/haradats/your-first-guide-to-secure-linux-4906031
+
+# New bypass and protection techniques
+http://blog.ptsecurity.com/2018/02/new-bypass-and-protection-techniques.html
+
+# Kernel KCOV introduction
+https://gitlab-beta.engr.illinois.edu/ejclark2/linux/commit/5c9a8750a6409c63a0f01d51a9024861022f6593

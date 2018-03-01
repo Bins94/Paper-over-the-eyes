@@ -33,3 +33,6 @@ no-executable pxn/pan block perf by default seccomp support
 
 # printk address infoleak 
 [kernel-hardening] [PATCH v7] printk: hash addresses printed with %p
+
+# /proc/kallsyms turn off
+[kernel-hardening] [PATCH] kallsyms: don't leak address when printing symbol

@@ -8,5 +8,20 @@
 * http://cse.yeditepe.edu.tr/~kserdaroglu/spring2014/cse331/termproject/BOOKS/ProfessionalLinuxKernelArchitecture-WolfgangMauerer.pdf
 
 # Ptrace tutorial
-http://www.linuxjournal.com/article/6100
+* http://www.linuxjournal.com/article/6100
 
+# Tracepoint set
+* https://lwn.net/Articles/346470/
+
+# Using the TRACE_EVENT() macro
+* https://lwn.net/Articles/379903/
+
+# eBPF introduction
+* https://lwn.net/Articles/740157/
+* http://www.brendangregg.com/ebpf.html
+
+# Kernel vm base
+```  
+arch/x86/include/asm/page_32_types.h:#define __START_KERNEL_map __PAGE_OFFSET
+arch/x86/include/asm/page_64_types.h:#define __START_KERNEL_map _AC(0xffffffff80000000, UL)
+```  

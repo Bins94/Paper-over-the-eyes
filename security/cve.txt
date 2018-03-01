@@ -27,8 +27,13 @@ https://www.kernel.org/doc/Documentation/networking/packet_mmap.txt
 # CVE-2017-14991
 SCSI devices uninitilize memory copy to user by ioctl SG_GET_REQEST_TABLE, infoleak
 
-#CVE-2017-12192
+# CVE-2017-12192
 kernel: NULL pointer dereference due to KEYCTL_READ on negative key
 file:security/keys/keyctl.c
 code path:keyctl(KEYCTL_READ) -> keyctl_read_key(KEY_FLAG_NEGATIVE key->flags)
 NULL pointer dereference
+
+# CVE-2017-5123
+about unsafe_get/put_user:https://lwn.net/Articles/736348/
+
+# [kernel-hardening] [PATCH resend 0/2] capability controlled user-namespaces
