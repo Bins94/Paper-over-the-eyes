@@ -25,3 +25,7 @@
 arch/x86/include/asm/page_32_types.h:#define __START_KERNEL_map __PAGE_OFFSET
 arch/x86/include/asm/page_64_types.h:#define __START_KERNEL_map _AC(0xffffffff80000000, UL)
 ```  
+# Kernel module  
+```  
+https://lwn.net/Articles/driver-porting/
+```  

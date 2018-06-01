@@ -48,3 +48,19 @@ http://blog.ptsecurity.com/2018/02/new-bypass-and-protection-techniques.html
 
 # Kernel KCOV introduction
 https://gitlab-beta.engr.illinois.edu/ejclark2/linux/commit/5c9a8750a6409c63a0f01d51a9024861022f6593
+
+# A gentle introduction to fuzzing C++ code with AFL and libFuzzer
+http://jefftrull.github.io/c++/clang/llvm/fuzzing/sanitizer/2015/11/27/fuzzing-with-sanitizers.html
+
+# AFL tutorial 
+https://www.evilsocket.net/2015/04/30/fuzzing-with-afl-fuzz-a-practical-example-afl-vs-binutils/
+
+# UBSAB
+scripts/Makefile.ubsan: add CFLAGS to Makefile
+lib/ubsan.c: implement of handle function
+
+# fsanitize-coverage 
+http://clang.llvm.org/docs/SanitizerCoverage.html#tracing-data-flow
+https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html
+https://gcc.gnu.org/ml/gcc/2017-07/msg00046.html
+https://davejingtian.org/2017/06/01/understanding-kcov-play-with-fsanitize-coveragetrace-pc-from-the-user-space/

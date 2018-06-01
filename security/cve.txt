@@ -37,3 +37,9 @@ NULL pointer dereference
 about unsafe_get/put_user:https://lwn.net/Articles/736348/
 
 # [kernel-hardening] [PATCH resend 0/2] capability controlled user-namespaces
+
+# CVE-2018-7738:code execution in bash-completion for umount
+Mishandle the "\0" when mount/umount...
+
+
+https://research.checkpoint.com/mmap-vulnerabilities-linux-kernel/s
