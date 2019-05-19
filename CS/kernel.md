@@ -20,12 +20,27 @@
 * https://lwn.net/Articles/740157/
 * http://www.brendangregg.com/ebpf.html
 
-# Kernel vm base
+# Kernel vm base  
 ```  
 arch/x86/include/asm/page_32_types.h:#define __START_KERNEL_map __PAGE_OFFSET
 arch/x86/include/asm/page_64_types.h:#define __START_KERNEL_map _AC(0xffffffff80000000, UL)
+
 ```  
+
 # Kernel module  
+
 ```  
 https://lwn.net/Articles/driver-porting/
 ```  
+
+# Kernel ipv6
+http://www.tldp.org/HOWTO/Linux+IPv6-HOWTO/
+
+# tun device
+http://www.cis.syr.edu/~wedu/seed/Labs/VPN/files/simpletun.c
+
+# kprobe & jprobe
+https://opensourceforu.com/2011/04/kernel-debugging-using-kprobe-and-jprobe/
+
+# socket repair queue
+https://lwn.net/Articles/495304/

@@ -41,5 +41,10 @@ about unsafe_get/put_user:https://lwn.net/Articles/736348/
 # CVE-2018-7738:code execution in bash-completion for umount
 Mishandle the "\0" when mount/umount...
 
-
 https://research.checkpoint.com/mmap-vulnerabilities-linux-kernel/s
+
+# CVE-2018-1000204 : Linux kernel 3.18 to 4.16 infoleak due to incorrect handling of SG_IO ioctl
+scsi device copy infoleak
+
+
+

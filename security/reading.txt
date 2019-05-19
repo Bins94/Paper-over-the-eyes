@@ -64,3 +64,53 @@ http://clang.llvm.org/docs/SanitizerCoverage.html#tracing-data-flow
 https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html
 https://gcc.gnu.org/ml/gcc/2017-07/msg00046.html
 https://davejingtian.org/2017/06/01/understanding-kcov-play-with-fsanitize-coveragetrace-pc-from-the-user-space/
+
+# cgroup
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/ch01
+
+# DeepState fuzz
+https://blog.trailofbits.com/2019/01/22/fuzzing-an-api-with-deepstate-part-1/
+1. multiple main/test, a tree a fixed sequence. Run multiple test.
+2. longer call sequence( libfuzz/afl limit?)
+3. rand() --> deepstate_type() ( syzkaller hardcode in syscall script)
+4. OneOf choose calls to execute
+https://blog.trailofbits.com/2019/01/23/fuzzing-an-api-with-deepstate-part-2/
+1. language base mutate, universalmutator.
+
+# What afl fuzz bad at
+https://blog.regehr.org/archives/1238
+Recognize special behavier as crash
+Guid fuzz reach these behavier
+
+# https://arxiv.org/pdf/1711.09362.pdf
+Symexec (KLEE):targeted search strategy, shortest path search algorithm
+Solution:
+1. Fuzzer as a initial exploration, targeted symbolic execution explore uncovered function.
+2. Symbolic execution for generating test case, fuzz them.
+Contribution:
+1. target search functionality in KLEE.
+2. initial explore without state search, devote more time to harder-to-reach function.
+3. high coverage.
+Trade off the cost of integrity(SMT solve) and randomness(blind fuzz).
+FS mode: fuzz for a limited amount of time, sonar-search as path-search strategy. Handwrite test case could be better.
+SF mode: symbolic execution generate test case, use them as seed input, fuzz them.
+Fuzz:AFL
+Symexec:KLEE, explore call-graph, when a state was detected, explore the consecutive state. Drop those out of call-graph.
+Orchestrator: 1. call-graph info of progrom. 2. function node with regular argument.
+Individual target(directed) fuzz
+Fuzz miss bug in "lesser called" functions of a program. Symexec miss bug in deeper function of a program.
+evaluate:
+1. function coverage
+2. coverage depth
+
+https://arxiv.org/abs/1903.02981
+KLEE generate seed input with a fixed target( bug)
+Execute with the input, check if call stack is the same as call stack information of bug. If not, the bug can't be reproduce. If yes, the path constrain is satisfied( symbolic argument). Just fuzz it.
+
+VUzzer: Application-aware Evolutionary Fuzzing(ndss 17)
+data-flow
+Check if the input is branch-relative dynamicly. Instrument cmp/lea instruction
+control-flow
+weighted coverage( weighted base-block)
+magic number
+detect magic number
