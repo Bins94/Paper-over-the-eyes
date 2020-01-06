@@ -1,2 +1,0 @@
-# Introduction to ELF
-http://people.redhat.com/mpolacek/src/devconf2012.pdf

@@ -1,0 +1,47 @@
+# PaX RAP RIP 
+https://pax.grsecurity.net/docs/PaXTeam-H2HC15-RAP-RIP-ROP.pdf
+
+# PaX usercopy memory_sanitize randmmap slide
+https://www.slideshare.net/kerneltlv/grsecurity-and-pax
+
+# Guide to kernel exploition
+https://github.com/sohaibnasser/CySecBooks/blob/master/A%20Guide%20to%20Kernel%20Exploitation%20Attacking%20the%20Core.pdf
+
+# ret2dir
+http://www.cs.columbia.edu/~vpk/papers/ret2dir.sec14.pdf
+
+# kGuard: Lightweigth Kernel Protection against Return-to-user Attack
+https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final143.pdf
+
+# Understanding linux network internals
+http://pdf.th7.cn/down/files/1312/understanding_linux_network_internals.pdf
+
+# PaX feature overview
+http://www.openwall.com/lists/kernel-hardening/2011/06/26/3
+
+# Better kernel with gcc-plugin
+https://lwn.net/Articles/461811/
+
+# Linux ASLR comparison
+https://gist.github.com/thestinger/b43b460cfccfade51b5a2220a0550c35
+
+# gcc-plugin for kernexec/stackleak
+https://lwn.net/Articles/712161/
+
+# seccomp history
+https://lwn.net/Articles/656307/
+
+# Some documentation
+https://firejail.wordpress.com/documentation-2/
+
+# eBPF memory corruption 
+https://bugs.chromium.org/p/project-zero/issues/detail?id=1454&desc=3
+
+# 2017 debian security
+https://lists.debian.org/debian-security-announce/2017/msg00336.html
+
+# TOMOYO(other security knowlegedge)
+https://www.slideshare.net/haradats/your-first-guide-to-secure-linux-4906031
+
+# New bypass and protection techniques
+http://blog.ptsecurity.com/2018/02/new-bypass-and-protection-techniques.html

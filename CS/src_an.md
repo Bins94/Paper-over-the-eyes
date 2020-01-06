@@ -12,3 +12,6 @@ http://homepage.cs.uiowa.edu/~tinelli/talks/FT-11.pdf
 
 # z3 python 
 https://www.cs.tau.ac.il/~msagiv/courses/asv/z3py/guide-examples.htm
+
+# z3-mode
+https://github.com/zv/z3-mode
