@@ -93,8 +93,7 @@ Guid fuzz reach these behavier
 ## https://arxiv.org/pdf/1711.09362.pdf
 Symexec (KLEE):targeted search strategy, shortest path search algorithm
 Solution:
-1. Fuzzer as a initial exploration, targeted symbolic execution explore uncovered functio\
-n.
+1. Fuzzer as a initial exploration, targeted symbolic execution explore uncovered function.
 2. Symbolic execution for generating test case, fuzz them.
 Contribution:
 1. target search functionality in KLEE.
@@ -122,13 +121,24 @@ Execute with the input, check if call stack is the same as call stack informatio
 gument). Just fuzz it.
 
 ## VUzzer: Application-aware Evolutionary Fuzzing(ndss 17)
-data-flow
-Check if the input is branch-relative dynamicly. Instrument cmp/lea instruction( only inp\
-ut is `directly` used by condition)
-control-flow
-weighted coverage( weighted base-block)
-magic number
-detect magic number
+Diffculty:
+Magic byte: specify offset with specify value.
+Deeper execution: right combination of input offset bytes.
+Markers: markers may not prsent at a certain fields.
+Nested conditions:
+Vuzzer feature:
+Data-flow: taint analysis to infer the struct of input. Instrument cmp instruction to determin the offset of input byte used by comparision and its expect value. Magic byte solution replace expensive symbolic excution.
+Control-flow: Detect error-handling help mutating interesting byte. Assign weight basic block base on depth. error-handling have negative weight.
+Static analyzer: get immediate values of comparision.
+Fuzz loop: dynamic taint analysis. Generate initial input to get the magic-byte and error-handling. DTA has high overhead, use it sparingly after loop start.
+Fitness calculation: weight basic block.
+Genetic operators:
+Detailing: 
+DTA: trace the taint input offset used by comparision.
+     magic-byte.
+     weight of basic: build CFG, calculate how many time the basic block will be executed.
+     Block(randominput) - Block(seedinput) = Block(errhandling)
+Fitness: base on calculiation of basic block weight.
 
 ## moonshine: base on syzkaller
 
@@ -138,7 +148,7 @@ https://www.usenix.org/system/files/sec20spring_gan_prepub.pdf
 FTI(fuzzing-driven tain inference):
   If a monitored variable value is tainted while mutate some bytes of the input, that can\
  be infer the variable is depend on the input.( For accurating labor-intensive analysis(V\
-Uzzer). Can't cover the case while the variable is implict effect by external syscalls.)
+Uzzer). Can't cover the case while the variable is implict effec by external syscalls.)
   1.Byte-level mutate
   BLT(S, pos)
   2.Variable value monitoring
@@ -174,3 +184,26 @@ This is fuzzer for smart contract.
 1. symbolic excution expert generate test case program.
 2. Learn the sequence of testcase, calculate the probability of call using mackov decison\
  process. Imitation learning the expert program, as fuzz policy, fuzz...
+
+## MemFuzz
+https://www.informatik.tu-darmstadt.de/media/deeds/news/memfuzz-preprint.pdf
+Process can't exhibited as control flow behaveior.
+Strategy of information-guided fuzzer
+InsTrim: edge coverage but not basic blocks. MemFuzz use static analysis tool to instrument memory access.
+AFLGo: calculate the distance to the target.
+1.Enhance AFL LLVM instrumentation pass. Instrument load and store instruction.
+2.Instrument information filtering
+  Discard the global variable access and stack variables without using dynameically computed offset.
+  Extern AFL runtime library for memory instrument.
+  Bloom filter. Deduplicate.
+  New edge coverage + new memory addresses were write + new memory address were read.
+
+## Fuzzification anti-fuzzing technoques
+1. SpeedBump: amplifies the slowdown in normal executions by hundreds of times to the fuzzed execution. Injects delays to cold path. Randomly CPU-intensive operation and reuse branchtrap for delay. Use CSmith generate code for resistant analysis delay.
+cold path: easy to be reached by fuzzing but rarely visited by normal execution. e.g: error handle. Use testcase and inject delays to least-executed cold path.
+2. BranchTrap: interfering feedback by hiding paths and polluting coverage maps. Input-sensitive jumps. Any input drift change will change the execution path. Waste the fuzz resources to explore the worthless paths.
+Jump map: gadget array. ROP in a jump function. Polluting the coverage information.
+3. AntiHybrid: hindering taint-analysis and symbolic execution. Introducing implicit data-flow dependencies, restore the input into a new variable. Replace the comparision operands with hast value.
+
+## FastSyzkaller
+Introducing n-Gram to analyse the pattern of crash testcase. Use this information in syzkaller fuzzing.
