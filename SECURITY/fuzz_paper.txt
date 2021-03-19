@@ -207,3 +207,59 @@ Jump map: gadget array. ROP in a jump function. Polluting the coverage informati
 
 ## FastSyzkaller
 Introducing n-Gram to analyse the pattern of crash testcase. Use this information in syzkaller fuzzing.
+
+## FuzzGen
+1. Build Abstruct API dependence Graph base on exiting testcase.
+2. Generate testcase base on A2DG.
+   A2DG:
+     1. Control dependence: indicate how the various API calls should be invoked
+     2. Data dependence: potential dependence between argument and return value of calls.
+
+## 0-knowledge fuzzing
+use cyclomatic complexity to determine which function could be potentially interest for fuzzer.
+
+## Badger: Complexity Analysis with Fuzzing and Symbolic Execution
+Use fuzz to analysis execution cost.
+
+## Boosting Fuzzer Efficiency: An Information Theoretic Perspective
+Basic theory: more new behaviors was triggered, more information content in each input, entropy is small.
+
+## A systematic review of fuzzing based on machine learning techniques
+
+## Terminaloge
+Thompson sampling
+seq2seq
+Hidden marcov process.
+
+NEUZZ: efficent fuzzing with neural program smoothing
+https://arxiv.org/pdf/1807.05620.pdf
+1. seed inputs
+2. get coverage( output) from seed inputs
+3. smothing the coverage gap between inputs( inputs difficient?).
+4. guiding fuzzer to mutate inputs base on smoothed coverage( gradient guide).
+5. got a new input, rerun the loop from 2-5.
+
+# BDA: Practical Dependence Analysis for Binary Executables by Unbiased Whole-Program Path Sampling and Per-Path Abstract Interpretation
+https://dl.acm.org/doi/pdf/10.1145/3360563
+### Value Set Analysis( VSA): use interpretation to determine of accessed by memory instructions(possible values for the operands of each instruction).
+1. Have subtantial false positices.
+2. difficult to scaling to complex binaries.
+strided interval: lower bound and upper bound and stride.
+possible address from entire memory space lead to bogus dependence.probabilistic guarantees
+### Sampling algorithms
+### Program Dependexce Analysis: determines if there is dependence between two instructions.
+1. Binary program dependence analysis without symbol information, Source level data structures, variables, and arguments are compiled down to registers and memory accesses.
+2. indirect control flow.
+Dynamic dependence analysis: base on input while symbol execution or fuzz can't generate input well.
+
+## denpendence analysis with probabilistic guarantees, novel randomized abstract interpretation.
+1. sample the space of whole program paths without biase of path length.
+2. Abstract interpretation
+### Alto: Possible Runtime Values: base on base address and offset
+### VSA:
+
+## procedure
+1. disassemble code from binary
+2. Path Sample: static analyze inter-procedural CFG. Path count: more follow path more biase, loop-free, assume call always return back and distribute weight of callee entry block( sum of path), and no indirected call. Assign w0/(w0+w1) to every branch. Weight assign approximation.
+3. Abstruact Interpretation: get data flow. Write parttern of memory manager for analysis. Note that in our interpretation, an instruction may be encountered multiple times in a sample path and we distinguish these different instances. In contrast, VSA does not; instead it merges the abstract values for all possible instances, which is an important source of inaccuracy.
+4. Posterior Analysis: analyse dependence between memory accessing

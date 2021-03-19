@@ -21,3 +21,17 @@ ProgramState: Abstract state of the program.
  SymExpr: A actual( immutable) value with constraints for a specify path.
  MemRegion: 
 CheckerDocumentation.cpp: Desribe the class of kinds of checker.
+
+# clang static analysis
+http://lcs.ios.ac.cn/~xuzb/canalyze/memmodel.pdf
+syntax-only analysis:
+AST: sourcelocation
+     sourceline(before proprocess take place)
+path-sensitive analysis
+CFG: basic block
+Exploded graph: all paths through CFG + state on each path in every statement( program point)
+clang path-sensitive analysis: abstract interpretaion of program
+    assumes assigning symbolic value
+    splite all possible states
+
+# http://clang-developers.42468.n3.nabble.com/How-to-generate-constraints-on-input-to-reach-a-specific-program-statement-location-in-execution-td4053911.html
